@@ -24,4 +24,7 @@ Pod::Spec.new do |s|
 
   s.source_files  = "ios/src/**/*.{h,m}"
 
+
+  install_modules_dependencies(s)
+
 end

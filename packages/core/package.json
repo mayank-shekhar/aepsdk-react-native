@@ -34,5 +34,17 @@
   },
   "installConfig": {
     "hoistingLimits": "dependencies"
+  },
+  "codegenConfig": {
+    "name": "RNRCTAEPCoreSpec",
+    "type": "all",
+    "jsSrcsDir": "src",
+    "android": {
+      "javaPackageName": "com.adobe.marketing.mobile.reactnative"
+    },
+    "includesGeneratedCode": true
+  },
+  "devDependencies": {
+    "react-native": "^0.75.3"
   }
 }

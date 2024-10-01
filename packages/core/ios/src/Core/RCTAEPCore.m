@@ -129,18 +129,18 @@ RCT_EXPORT_METHOD(dispatchEvent: (nonnull NSDictionary*) eventDict resolver:(RCT
  }
 
 RCT_EXPORT_METHOD(dispatchEventWithResponseCallback: (nonnull NSDictionary*) requestEventDict timeoutDuration:(nonnull NSNumber*) timeoutNumber resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
-    
+
     AEPEvent *requestEvent = [RCTAEPCoreDataBridge eventFromDictionary:requestEventDict];
     if (!requestEvent) {
         reject(EXTENSION_NAME, FAILED_TO_CONVERT_EVENT_MESSAGE, nil);
         return;
     }
-    
+
     if (![timeoutNumber respondsToSelector:@selector(intValue)]) {
             reject(EXTENSION_NAME, @"Invalid timeout value", nil);
            return;
     }
-    
+
     double timeout = [timeoutNumber intValue] / 1000.0;
 
     [AEPMobileCore dispatch:requestEvent timeout:timeout responseCallback:^(AEPEvent * _Nullable responseEvent) {
@@ -149,7 +149,7 @@ RCT_EXPORT_METHOD(dispatchEventWithResponseCallback: (nonnull NSDictionary*) req
          } else {
              resolve([RCTAEPCoreDataBridge dictionaryFromEvent:responseEvent]);
          }
-        
+
     }];
 }
 

@@ -17,7 +17,7 @@
   "dependencies": {
     "@adobe/react-native-aepassurance": "^6.0.0",
     "@adobe/react-native-aepcampaignclassic": "^6.0.0",
-    "@adobe/react-native-aepcore": "^6.0.0",
+    "@adobe/react-native-aepcore": "^6.0.2",
     "@adobe/react-native-aepedge": "^6.0.0",
     "@adobe/react-native-aepedgebridge": "^6.0.0",
     "@adobe/react-native-aepedgeconsent": "^6.0.0",
